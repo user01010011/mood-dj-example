@@ -1,0 +1,6 @@
+messages:
+  - role: system
+    content: Respond with the songs formatted in JSON
+  - role: user
+    content: 'Suggest 10 songs for when I am feeling {{mood}}'
+model: gpt-4o
