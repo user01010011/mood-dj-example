@@ -5,6 +5,7 @@ from azure.ai.inference.models import SystemMessage, UserMessage
 from azure.core.credentials import AzureKeyCredential
 import yaml
 import json
+import os
 
 def load_prompts(file_path):
     with open(file_path, "r") as file:
@@ -17,7 +18,7 @@ user_prompt_template = prompts['messages'][1]['content']
 
 endpoint = "https://models.github.ai/inference"
 model = "openai/gpt-4.1"
-token = "XXXXXXXXXXXXXXXXX"
+token = os.environ["GITHUB_TOKEN"]
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
